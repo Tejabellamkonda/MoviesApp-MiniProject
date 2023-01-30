@@ -1,0 +1,39 @@
+.li-container {
+  align-content: center;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container {
+  width: 100%;
+}
+
+.image {
+  height: 170px;
+  width: 254px;
+  left: 166px;
+  top: 708px;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 480px) {
+  .image {
+    height: 64px;
+    width: 90px;
+    left: 32px;
+    top: 439px;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  .image {
+    height: 100px;
+    width: 150px;
+    left: 32px;
+    top: 439px;
+    border-radius: 8px;
+  }
+}

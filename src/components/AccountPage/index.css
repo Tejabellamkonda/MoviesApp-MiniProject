@@ -1,0 +1,121 @@
+.account-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.hr-line {
+  border: 2px solid rgba(203, 213, 225, 1);
+
+  border-radius: 10px;
+  width: 100%;
+}
+
+.acc-text {
+  font-family: 'HK Grotesk';
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46.91px;
+}
+
+.acc-membership {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0px;
+}
+
+.membership-text {
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 31.27px;
+  color: rgba(148, 163, 184, 1);
+  margin-right: 20px;
+}
+
+.user-text {
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.27px;
+  color: rgba(30, 41, 59, 1);
+}
+
+.user-password {
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.27px;
+  color: rgba(148, 163, 184, 1);
+}
+
+.span-text {
+  border: 1px solid;
+  font-family: 'HK Grotesk';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.logout-btn {
+  background-color: rgba(229, 9, 20, 1);
+  height: 40px;
+  width: 89px;
+  left: 675px;
+  top: 508px;
+  border-radius: 4px;
+  padding: 8px 20px 8px 20px;
+  font-family: HK Grotesk;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  align-self: center;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .membership-text {
+    font-family: HK Grotesk;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+  .user-text {
+    font-family: 'HK Grotesk';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0px;
+  }
+
+  .user-password {
+    font-family: 'HK Grotesk';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    color: rgba(148, 163, 184, 1);
+  }
+  .span-text {
+    font-family: 'HK Grotesk';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+}

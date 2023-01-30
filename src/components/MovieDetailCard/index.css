@@ -1,0 +1,94 @@
+.movie-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.poster-container {
+  min-height: 500px;
+}
+
+.movie-details-container {
+  margin-left: 62px;
+
+  margin-right: 62px;
+}
+
+.runtime-cont {
+  display: flex;
+  text-align: center;
+}
+
+.run-time {
+  font-family: 'HK Grotesk';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+
+.adult-text {
+  height: 27px;
+  width: 55px;
+  left: 245.5px;
+  top: 258px;
+  border-radius: 2px;
+  padding: 2px 12px 2px 12px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.text {
+  font-family: 'HK Grotesk';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.year-text {
+  font-family: 'HK Grotesk';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.more-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-left: 62px;
+  margin-right: 62px;
+  flex-wrap: wrap;
+}
+
+.ul-container {
+  list-style-type: none;
+  margin-right: 5px;
+  padding-left: 0px;
+  flex-shrink: 0;
+}
+
+.li-head {
+  font-family: 'HK Grotesk';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  color: rgba(148, 163, 184, 1);
+}
+
+.li-text {
+  font-family: 'HK Grotesk';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}

@@ -1,0 +1,263 @@
+.navbar-bg-color {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 60px;
+  width: 100%;
+  /* position: fixed; */
+}
+.header-logo {
+  width: 80px;
+  height: 30px;
+}
+
+.app-logo {
+  flex-shrink: 0;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  /* display: none; */
+  visibility: hidden;
+  text-align: center;
+}
+.actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .profile-image {
+    margin-right: 10px;
+    visibility: visible;
+    margin-bottom: 10px;
+  }
+  .navbar-bg-color {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .menu-btn {
+    visibility: hidden;
+  }
+  .search-btn {
+    margin-right: 22px;
+  }
+  .mbl-view {
+    display: none;
+  }
+}
+
+.header-logo-links-container {
+  align-self: initial;
+  list-style-type: none;
+  display: flex;
+  margin-left: -20%;
+}
+.header-logo-each-link {
+  margin-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  .header-logo-links-container {
+    display: none;
+  }
+  .app-logo {
+    height: 27px;
+    width: 100px;
+    left: 32px;
+    top: 24px;
+    border-radius: 0px;
+  }
+}
+.nav-container {
+  background-color: rgba(19, 19, 19, 1);
+  min-height: auto;
+  padding: 15px;
+}
+.nav-elements-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.nav-item3-container {
+  display: flex;
+}
+
+.nav-list-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+@media screen and (max-width: 767px) {
+  .nav-list-items {
+    display: none;
+  }
+}
+
+.list-mini {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-logo {
+  display: none;
+}
+@media screen and (min-width: 767px) {
+  .profile-logo {
+    display: block;
+    height: 35px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+.menu-icon {
+  display: none;
+}
+
+.icon {
+  color: #ffffff;
+  height: 25px;
+
+  margin-left: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  outline: none;
+}
+
+.search {
+  height: 40.000999450683594px;
+  width: 220px;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 8px 16px 8px 16px;
+  border: 1px solid rgba(248, 250, 252, 1);
+  background-color: transparent;
+  color: rgba(248, 250, 252, 1);
+  border-right: none;
+}
+
+.search-btn {
+  height: 40.000999450683594px;
+  padding: 8px 16px 8px 16px;
+  background-color: #909090;
+  border-left: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 1px solid rgba(248, 250, 252, 1);
+  border-left: none;
+  font-size: 20px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #909090;
+  width: 70px;
+  border: none;
+  cursor: pointer;
+}
+.icons-container {
+  display: flex;
+  justify-content: center;
+}
+.icon-button {
+  background-color: transparent;
+  border-width: 0;
+  padding-top: 5px;
+  margin-top: 4px;
+}
+
+.popup-heading {
+  font-family: 'HK Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  /* identical to box height, or 162% */
+
+  letter-spacing: -0.355556px;
+  margin-left: 35px;
+
+  color: #ffffff;
+}
+
+.home-heading {
+  font-family: HK Grotesk;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.35555556416511536px;
+  text-align: left;
+  color: #ffffff;
+  margin-left: 10px;
+  align-self: flex-start;
+}
+
+.active {
+  color: #f3c8c8;
+  font-weight: 800;
+}
+
+.passive {
+  color: #ffffff90;
+}
+
+.search-none {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-icon {
+    display: block;
+    color: #ffffff;
+    height: 28px;
+
+    margin-left: 10px;
+  }
+  .search {
+    height: 24px;
+    width: 80px;
+    left: 174px;
+    top: 26px;
+    padding: 4px 10px 4px 8px;
+  }
+  .search-btn {
+    height: 24px;
+    font-size: 10px;
+  }
+}

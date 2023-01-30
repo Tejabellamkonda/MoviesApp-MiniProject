@@ -1,0 +1,37 @@
+.failed-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  padding: 30px;
+  min-height: 100%;
+}
+.failed-image {
+  width: 30px;
+}
+@media screen and (min-width: 768px) {
+  .failed-image {
+    width: 50px;
+  }
+}
+.failed-heading {
+  font-family: 'HK Grotesk';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+
+.retry-btn {
+  height: 32px;
+  width: 85px;
+  left: 0px;
+  top: 0px;
+  border-radius: 4px;
+  padding: 4px 16px 4px 16px;
+
+  color: rgba(255, 255, 255, 1);
+}
