@@ -20,7 +20,13 @@ class Search extends Component {
     searchText: '',
   }
 
-  componentDidMount() {
+  searchInput = searchValue => {
+    this.setState({
+      searchText: searchValue,
+    })
+  }
+
+  onClickSearch = () => {
     this.getSearchVideos()
   }
 
@@ -62,13 +68,6 @@ class Search extends Component {
     }
   }
 
-  searchInput = searchValue => {
-    this.setState({
-      searchText: searchValue,
-    })
-    this.getSearchVideos()
-  }
-
   onClickRetry = () => {
     this.getSearchVideos()
   }
@@ -103,12 +102,13 @@ class Search extends Component {
   renderApiFailureView = () => <FailureView onRetry={this.onClickRetry()} />
 
   renderApiLoadingView = () => (
-    <div className="loader-container">
+    <div className="loader-container" testid="loader">
       <Loader
         type="TailSpin"
         color="rgba(216, 31, 38, 1)"
         height="50"
         width="50"
+        testid="loader"
       />
     </div>
   )
@@ -130,7 +130,10 @@ class Search extends Component {
   render() {
     return (
       <div className="popular-body search-body">
-        <Header onSearch={this.searchInput} />
+        <Header
+          onSearch={this.searchInput}
+          onClickSearchBtn={this.onClickSearch}
+        />
         <div className="items-container">{this.renderSearchResult()}</div>
       </div>
     )

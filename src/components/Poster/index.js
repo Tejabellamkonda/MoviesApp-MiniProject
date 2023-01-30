@@ -8,14 +8,14 @@ const HomePoster = props => {
   const random = Math.floor(Math.random() * len)
 
   const poster = posters[random]
-  const {backdropPath, overview, title} = poster
+  const {backdropPath, overview, title, posterPath} = poster
   console.log(poster)
 
   return (
     <div
       className="poster-container"
       style={{
-        backgroundImage: `url(${backdropPath})`,
+        backgroundImage: `url(${posterPath})`,
         backgroundSize: '100% 100%',
       }}
     >

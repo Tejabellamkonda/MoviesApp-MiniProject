@@ -105,7 +105,7 @@ class LoginForm extends Component {
         <img
           src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1657426908/lg-devices-logo_rpfa68.png"
           className="website-logo"
-          alt="website login"
+          alt="login website logo"
         />
 
         <form className="form-container" onSubmit={this.submitForm}>

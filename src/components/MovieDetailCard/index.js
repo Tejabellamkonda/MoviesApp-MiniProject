@@ -8,7 +8,6 @@ const MovieCard = props => {
   const minutes = runtime % 60
   const date = new Date(movie.release_date)
   const year = date.getFullYear()
-  console.log(year)
 
   return (
     <div className="movie-card-container">
@@ -22,11 +21,11 @@ const MovieCard = props => {
         <div className="movie-details-container">
           <h1 className="poster-title">{title}</h1>
           <div className="runtime-cont">
-            <h1 className="run-time">
+            <p className="run-time">
               {hours}h {minutes}min
-            </h1>
-            <h1 className="adult-text text">{adult ? 'A' : 'U/A'}</h1>
-            <h1 className="year-text">{year}</h1>
+            </p>
+            <p className="adult-text text">{adult ? 'A' : 'U/A'}</p>
+            <p className="year-text">{year}</p>
           </div>
           <p className="poster-overview">{overview}</p>
           <button type="button" className="play-btn">
@@ -35,34 +34,34 @@ const MovieCard = props => {
         </div>
       </div>
       <div className="more-details-container">
-        <ul className="ul-container">
-          <p className="li-head">Genre</p>
+        <div className="ul-container">
+          <h1 className="li-head">Genres</h1>
           {genres.map(each => (
-            <li key={each.id} className="li-text">
+            <p key={each.id} className="li-text">
               {each.name}
-            </li>
+            </p>
           ))}
-        </ul>
-        <ul className="ul-container">
-          <p className="li-head">Audio Available</p>
+        </div>
+        <div className="ul-container">
+          <h1 className="li-head">Audio Available</h1>
           {movie.spoken_languages.map(each => (
-            <li key={each.id} className="li-text">
+            <p key={each.id} className="li-text">
               {each.english_name}
-            </li>
+            </p>
           ))}
-        </ul>
-        <ul className="ul-container">
-          <p className="li-head">Rating Count</p>
+        </div>
+        <div className="ul-container">
+          <h1 className="li-head">Rating Count</h1>
           <p className="li-text">{movie.vote_count}</p>
-          <p className="li-head">Rating Average</p>
+          <h1 className="li-head">Rating Average</h1>
           <p className="li-text">{movie.vote_average}</p>
-        </ul>
-        <ul className="ul-container">
-          <p className="li-head">Rating Count</p>
-          <p className="li-text">{movie.vote_count}</p>
-          <p className="li-head">Rating Average</p>
-          <p className="li-text">{movie.vote_average}</p>
-        </ul>
+        </div>
+        <div className="ul-container">
+          <h1 className="li-head">Budget</h1>
+          <p className="li-text">{movie.budget}</p>
+          <h1 className="li-head">Release Date</h1>
+          <p className="li-text">{movie.release_date}</p>
+        </div>
       </div>
       <h1 className="heading">More like this</h1>
       <ul className="ul-list">

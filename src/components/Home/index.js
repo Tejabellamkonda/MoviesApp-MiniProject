@@ -7,6 +7,7 @@ import Trending from '../Trending'
 import Originals from '../Originals'
 import TopRatedMovies from '../TopRatedMovies'
 import HomePoster from '../Poster'
+import FailureView from '../FailureView'
 
 import './index.css'
 
@@ -24,6 +25,10 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    this.getOriginalVideos()
+  }
+
+  onClickRetry = () => {
     this.getOriginalVideos()
   }
 
@@ -68,10 +73,10 @@ class Home extends Component {
     return <HomePoster posters={originalList} />
   }
 
-  renderApiFailureView = () => {}
+  renderApiFailureView = () => <FailureView onRetry={this.onClickRetry} />
 
   renderApiLoadingView = () => (
-    <div className="loader-container">
+    <div className="loader-container" testid="loader">
       <Loader
         type="TailSpin"
         color="rgba(216, 31, 38, 1)"

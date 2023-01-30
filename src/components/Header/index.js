@@ -10,13 +10,11 @@ import './index.css'
 class Header extends Component {
   state = {
     showMenu: false,
-    searchInput: '',
   }
 
   onClickSearchIcon = () => {
-    const {onSearch} = this.props
-    const {searchInput} = this.state
-    onSearch(searchInput)
+    const {onClickSearchBtn} = this.props
+    onClickSearchBtn()
   }
 
   onClickShowMenu = () => {
@@ -28,9 +26,8 @@ class Header extends Component {
   }
 
   onChangeSearchInput = event => {
-    this.setState({
-      searchInput: event.target.value,
-    })
+    const {onSearch} = this.props
+    onSearch(event.target.value)
   }
 
   render() {
@@ -93,17 +90,18 @@ class Header extends Component {
             {show && (
               <>
                 <input
-                  type="text"
+                  type="search"
                   onChange={this.onChangeSearchInput}
                   placeholder="search"
                   className="search"
                 />
-                <button type="button" className="search-btn">
-                  <HiOutlineSearch
-                    color="white"
-                    testid="searchButton"
-                    onClick={this.onClickSearchIcon}
-                  />
+                <button
+                  type="button"
+                  className="search-btn"
+                  testid="searchButton"
+                  onClick={this.onClickSearchIcon}
+                >
+                  <HiOutlineSearch color="white" testid="searchButton" />
                 </button>
               </>
             )}
@@ -114,15 +112,11 @@ class Header extends Component {
                 className={`${show ? 'search-none' : 'icon-button'}`}
                 testid="searchButton"
               >
-                <HiOutlineSearch
-                  size={20}
-                  color="white"
-                  testid="searchButton"
-                />
+                <HiOutlineSearch size={20} color="white" />
               </button>
             </Link>
 
-            <Link to="/profile">
+            <Link to="/account">
               <img
                 src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1657426927/account-avatar_irmhck.png"
                 className={`profile-logo ${accountClassNameStyling}`}

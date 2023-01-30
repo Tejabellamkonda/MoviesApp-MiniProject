@@ -70,7 +70,7 @@ class Trending extends Component {
   renderApiFailureView = () => <FailureView onRetry={this.onClickRetry} />
 
   renderApiLoadingView = () => (
-    <div className="loader-container">
+    <div className="loader-container" testid="loader">
       <Loader
         type="TailSpin"
         color="rgba(216, 31, 38, 1)"

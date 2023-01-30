@@ -18,7 +18,7 @@ const Footer = () => (
           <FaYoutube />
         </button>
       </div>
-      <p className="contact-us">Contact Us</p>
+      <p className="contact-us">Contact us</p>
     </div>
   </>
 )

@@ -17,7 +17,7 @@ const App = () => (
       <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/popular" component={Popular} />
       <ProtectedRoute exact path="/search" component={Search} />
-      <ProtectedRoute exact path="/profile" component={AccountPage} />
+      <ProtectedRoute exact path="/account" component={AccountPage} />
       <ProtectedRoute exact path="/movies/:id" component={MovieItemDetails} />
       <Route path="/not-found" component={NotFound} />
       <Redirect to="/not-found" />

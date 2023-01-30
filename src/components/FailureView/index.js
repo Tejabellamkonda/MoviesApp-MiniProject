@@ -3,7 +3,7 @@ import './index.css'
 const FailureView = props => {
   const {onRetry} = props
 
-  const onClickRetry = () => {
+  const onClickTryAgain = () => {
     onRetry()
   }
 
@@ -15,7 +15,7 @@ const FailureView = props => {
         alt="failure view"
       />
       <p className="failed-heading">Something went wrong. Please try again</p>
-      <button className="retry-btn" type="button" onClick={onClickRetry}>
+      <button className="retry-btn" type="button" onClick={onClickTryAgain}>
         Try Again
       </button>
     </div>
