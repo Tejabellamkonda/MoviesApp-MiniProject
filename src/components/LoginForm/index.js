@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 
 import './index.css'
+import SavedContext from '../../Context'
 
 class LoginForm extends Component {
   state = {
@@ -47,8 +48,7 @@ class LoginForm extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
-    console.log(data)
-    console.log(response)
+
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
     } else {
@@ -95,32 +95,35 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {showSubmitError, errorMsg} = this.state
+    const {showSubmitError, errorMsg, username, password} = this.state
+
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
     return (
-      <div className="login-form-container">
-        <img
-          src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1657426908/lg-devices-logo_rpfa68.png"
-          className="website-logo"
-          alt="login website logo"
-        />
+      <SavedContext.Provider value={{username, password}}>
+        <div className="login-form-container">
+          <img
+            src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1657426908/lg-devices-logo_rpfa68.png"
+            className="website-logo"
+            alt="login website logo"
+          />
 
-        <form className="form-container" onSubmit={this.submitForm}>
-          <h1 className="login-text">Login</h1>
-          <div className="input-container">{this.renderUsernameField()}</div>
-          <div className="input-container">{this.renderPasswordField()}</div>
-          <button type="submit" className="login-button">
-            Login
-          </button>
-          <button type="submit" className="mbl-login-button">
-            Sign in
-          </button>
-          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
-        </form>
-      </div>
+          <form className="form-container" onSubmit={this.submitForm}>
+            <h1 className="login-text">Login</h1>
+            <div className="input-container">{this.renderUsernameField()}</div>
+            <div className="input-container">{this.renderPasswordField()}</div>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            <button type="submit" className="mbl-login-button">
+              Sign in
+            </button>
+            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+          </form>
+        </div>
+      </SavedContext.Provider>
     )
   }
 }

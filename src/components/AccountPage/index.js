@@ -2,60 +2,69 @@ import {withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Header from '../Header'
 import Footer from '../Footer'
+import SavedContext from '../../Context'
 
 import './index.css'
 
-const AccountPage = props => {
-  const {history} = props
+const AccountPage = props => (
+  <SavedContext.Consumer>
+    {value => {
+      const {username, password} = value
+      console.log(username, password)
 
-  const userName = localStorage.getItem('username')
-  const password = localStorage.getItem('password')
+      const {history} = props
 
-  console.log('*'.repeat(password.length))
+      const userName = localStorage.getItem('username')
+      const password1 = localStorage.getItem('password')
 
-  const onClickLogout = () => {
-    localStorage.removeItem('username')
-    localStorage.removeItem('password')
-    Cookies.remove('jwt_token')
-    history.replace('/login')
-  }
+      console.log('*'.repeat(password.length))
 
-  return (
-    <>
-      <div className="account-main-container">
-        <Header />
+      const onClickLogout = () => {
+        localStorage.removeItem('username')
+        localStorage.removeItem('password')
+        Cookies.remove('jwt_token')
+        history.replace('/login')
+      }
 
-        <div className="content">
-          <h1 className="acc-text">Account</h1>
-          <hr className="hr-line" />
-          <div className="acc-membership">
-            <p className="membership-text">Membership</p>
+      return (
+        <>
+          <div className="account-main-container">
+            <Header />
 
-            <div className="text-container">
-              <p className="user-text">{userName}</p>
-              <p className="user-password">
-                {' '}
-                Password:{'*'.repeat(password.length)}
-              </p>
+            <div className="content">
+              <h1 className="acc-text">Account</h1>
+              <hr className="hr-line" />
+              <div className="acc-membership">
+                <p className="membership-text">Member ship</p>
+
+                <div className="text-container">
+                  <p className="user-text">{userName}</p>
+                  <p className="user-password">
+                    {' '}
+                    Password:{'*'.repeat(password1.length)}
+                  </p>
+                </div>
+              </div>
+              <hr className="hr-line" />
+              <div className="acc-membership">
+                <p className="membership-text">Plan Details</p>
+                <p className="user-text">Premium Ultra HD</p>
+              </div>
+              <hr className="hr-line" />
+              <button
+                type="submit"
+                className="logout-btn"
+                onClick={onClickLogout}
+              >
+                Logout
+              </button>
             </div>
-          </div>
-          <hr className="hr-line" />
-          <div className="acc-membership">
-            <p className="membership-text">Plan Details</p>
-            <p className="user-text">
-              Premium <span className="span-text">Ultra HD</span>
-            </p>
-          </div>
-          <hr className="hr-line" />
-          <button type="submit" className="logout-btn" onClick={onClickLogout}>
-            Logout
-          </button>
-        </div>
 
-        <Footer />
-      </div>
-    </>
-  )
-}
-
+            <Footer />
+          </div>
+        </>
+      )
+    }}
+  </SavedContext.Consumer>
+)
 export default withRouter(AccountPage)

@@ -15,7 +15,7 @@ const HomePoster = props => {
     <div
       className="poster-container"
       style={{
-        backgroundImage: `url(${posterPath})`,
+        backgroundImage: `url(${backdropPath})`,
         backgroundSize: '100% 100%',
       }}
     >

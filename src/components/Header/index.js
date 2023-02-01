@@ -10,6 +10,7 @@ import './index.css'
 class Header extends Component {
   state = {
     showMenu: false,
+    searchInput: '',
   }
 
   onClickSearchIcon = () => {
@@ -27,11 +28,12 @@ class Header extends Component {
 
   onChangeSearchInput = event => {
     const {onSearch} = this.props
+    this.setState({searchInput: event.target.value})
     onSearch(event.target.value)
   }
 
   render() {
-    const {showMenu} = this.state
+    const {showMenu, searchInput} = this.state
     const {match} = this.props
     const {path} = match
     let homeClassNameStyling
@@ -94,14 +96,14 @@ class Header extends Component {
                   onChange={this.onChangeSearchInput}
                   placeholder="search"
                   className="search"
+                  value={searchInput}
                 />
                 <button
                   type="button"
                   className="search-btn"
-                  testid="searchButton"
                   onClick={this.onClickSearchIcon}
                 >
-                  <HiOutlineSearch color="white" testid="searchButton" />
+                  <HiOutlineSearch color="white" />
                 </button>
               </>
             )}
@@ -109,8 +111,8 @@ class Header extends Component {
             <Link to="/search">
               <button
                 type="button"
-                className={`${show ? 'search-none' : 'icon-button'}`}
                 testid="searchButton"
+                className={`${show ? 'search-none' : 'icon-button'}`}
               >
                 <HiOutlineSearch size={20} color="white" />
               </button>
@@ -145,7 +147,7 @@ class Header extends Component {
                 </li>
               </Link>
 
-              <Link to="/profile" className="nav-link">
+              <Link to="/account" className="nav-link">
                 <li className={`popup-heading ${accountClassNameStyling}`}>
                   Account
                 </li>
